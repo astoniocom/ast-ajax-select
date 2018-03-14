@@ -1,0 +1,10 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'ast_ajax_select/css/rest_ajax_select.css' %}" />
+<script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'ast_ajax_select/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'ast_ajax_select/js/rest_ajax_select.js' %}"></script>
+
+<input type="text" id="{{ html_id }}" value="" autocomplete="off"  data-ajax-select="autocompleteselect"  {% if placeholder %}placeholder="{{ placeholder }}"{% endif %} data-plugin-options="{{ plugin_options }}" class="{{ input_class }}" />
+
+<div id="{{ deck_id }}" class="results_on_deck"></div>

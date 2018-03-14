@@ -1,0 +1,28 @@
+{% load static rest_framework %}
+
+<div class="form-group {% if field.errors %}has-error{% endif %}">
+  {% if field.label %}
+    <label class="col-sm-2 control-label {% if style.hide_label %}sr-only{% endif %}">
+      {{ field.label }}
+    </label>
+  {% endif %}
+
+  <div class="col-sm-10">
+    {% include "ast_ajax_select/input_select.html" with name=field.name plugin_options=style.plugin_options input_class="form-control" deck_id=style.deck_id %}
+
+    {% if field.errors %}
+      {% for error in field.errors %}
+        <span class="help-block">{{ error }}</span>
+      {% endfor %}
+    {% endif %}
+
+    {% if field.help_text %}
+      <span class="help-block">{{ field.help_text|safe }}</span>
+    {% endif %}
+  </div>
+</div>
+
+
+
+
+                    
