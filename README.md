@@ -1,3 +1,24 @@
+# Description
+
+A set of classes for creating your own select components, as well as django rest-framework fields (for ManyToMany and ForeignKey). Compatible with django.forms and rest-framework.fields.
+
+# Creating your own fields
+
+1. Inherit AjaxSelectFieldMixin
+2. Set ajax data source using data_url property
+
+Samples:
+ast_ajax_select\ast_ajax_select\rest_framework\fields\AjaxSelectM2MField
+ast_ajax_select\ast_ajax_select\rest_framework\fields\AjaxSelectFKField
+ast-geo-place\ast_geo_place\rest_framework\fields\GooglePlaceIdField
+
+# Using existing fields for Rest Framework
+
+1. Install and setup django-ajax-selects
+2. In your serializer-class, add AjaxSelectFKField or AjaxSelectM2MField with the parameter queryset (which defines possible values) and channel_name (defines the channel name from django-ajax-selects).
+
+---
+
 # Описание
 
 Набор базовых классов для создания собственных ajax-select-компонентов, а так же django rest-framework поля для работы с ManyToMane и ForeignKey. За основу взята библиотека django-ajax-selects.
